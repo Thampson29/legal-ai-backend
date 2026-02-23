@@ -1,0 +1,26 @@
+# Legal AI Backend - Requirements
+# Python 3.10+
+
+# FastAPI and Server
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+python-dotenv>=1.0.0
+pydantic>=2.6.0
+
+# LangChain and AI
+langchain>=0.2.9
+langchain-core>=0.2.24
+langchain-community>=0.2.10
+langchain-openai>=0.1.19
+langchain-google-genai>=1.0.0
+langchain-chroma>=0.1.4
+
+# AI Models
+openai>=1.30.0
+google-generativeai>=0.3.0
+
+# Vector Database
+chromadb>=0.5.0
+
+# Additional Dependencies
+typing-extensions>=4.9.0

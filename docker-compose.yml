@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  legal-ai-backend:
+    build: .
+    container_name: legal-ai-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - CHROMA_DB_PATH=chroma_db_gemini
+      - CORS_ORIGINS=${CORS_ORIGINS:-*}
+    volumes:
+      - ./chroma_db_gemini:/app/chroma_db_gemini
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
